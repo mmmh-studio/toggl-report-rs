@@ -1,0 +1,29 @@
+[package]
+name = "toggl-reports"
+version = "0.1.0"
+authors = ["komori-n <ikamat.kmr@gmail.com>"]
+edition = "2018"
+description = "TBD."
+license = "MIT OR Apache-2.0"
+keywords = ["toggl"]
+categories = ["api-bindings"]
+
+[lib]
+crate-type = ["lib"]
+test = true
+doctest = true
+doc = true
+
+[dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", features  = ["serde"] }
+enum-display-derive = "0.1"
+itertools = "0.10"
+serde = "1.0"
+serde-aux = "2.1"
+serde_derive = "1.0"
+serde_json = "1.0"
+reqwest = "0.11"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
