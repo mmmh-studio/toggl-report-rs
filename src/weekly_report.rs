@@ -2,11 +2,11 @@
 //!
 //! For more information, see https://github.com/toggl/toggl_api_docs/blob/master/reports/weekly.md.
 
-use serde::Deserialize;
 use crate::reports::{
     EarningTotals, TimeTotals, Report,
     ProjectTitle, UserTitle,
 };
+use serde::Deserialize;
 
 /// A data structure to store WeeklyReports.
 #[derive(Debug, Deserialize)]

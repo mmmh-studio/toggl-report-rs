@@ -2,10 +2,10 @@
 //!
 //! For more information, see https://github.com/toggl/toggl_api_docs/blob/master/reports/summary.md.
 
-use serde::Deserialize;
 use crate::reports::{
     EarningWrapper, Currency, DurationWrapper, Report, Title
 };
+use serde::Deserialize;
 
 /// A structure to store SummaryReports.
 pub type SummaryReport = Report<SummaryData>;

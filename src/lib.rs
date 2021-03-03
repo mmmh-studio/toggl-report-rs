@@ -34,18 +34,18 @@
 #[macro_use]
 extern crate enum_display_derive;
 
-pub mod weekly_report;
 pub mod detailed_report;
-pub mod summary_report;
-pub mod reports;
 pub mod query;
+pub mod reports;
+pub mod summary_report;
+pub mod weekly_report;
 
-use reqwest::Client;
 use anyhow::Result;
 use query::Query;
-pub use weekly_report::WeeklyReport;
+use reqwest::Client;
 pub use detailed_report::DetailedReport;
 pub use summary_report::SummaryReport;
+pub use weekly_report::WeeklyReport;
 
 const DEFAULT_UA: &'static str = "komori-n<ikamat.kmr@gmail.com>";
 

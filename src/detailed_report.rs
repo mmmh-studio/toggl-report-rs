@@ -3,8 +3,8 @@
 //! For more information, see https://github.com/toggl/toggl_api_docs/blob/master/reports/detailed.md.
 
 use chrono::{DateTime, Utc};
-use serde::Deserialize;
 use crate::reports::{EarningWrapper, Currency, DurationWrapper};
+use serde::Deserialize;
 
 
 /// A structure to store DetailedReports.

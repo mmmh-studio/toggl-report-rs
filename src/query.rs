@@ -2,9 +2,9 @@
 //!
 //! For more details, see https://github.com/toggl/toggl_api_docs/blob/master/reports.md.
 
-use std::fmt::{self, Display};
 use chrono::{Date, Utc};
 use itertools::Itertools;
+use std::fmt::{self, Display};
 
 #[derive(Default, Debug)]
 pub struct Query {

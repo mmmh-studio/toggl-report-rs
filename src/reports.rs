@@ -1,9 +1,9 @@
 //! Data structures to store results of reports
 
-use serde::{Deserialize, Deserializer};
 use chrono::Duration;
-use std::ops::{Deref, DerefMut};
+use serde::{Deserialize, Deserializer};
 use std::convert::{AsRef, AsMut};
+use std::ops::{Deref, DerefMut};
 
 /// A type to represent total times of a week
 pub type TimeTotals = [DurationWrapper; 8];
