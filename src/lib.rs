@@ -1,6 +1,12 @@
 //! A library to call Toggl Reports API v2 in Rust.
 //!
+//! This library provide makes it easier to call
+//! [Toggl Reports API v2](https://github.com/toggl/toggl_api_docs/blob/master/reports.md) from Rust codes.
+//!
 //! # examples
+//!
+//! To get summary reports of Toggl Track,
+//! create struct `Query` and pass it to `Toggl.get_summary_report()`.
 //!
 //! ```no_run
 //! use toggl_reports::{Toggl, query::Query, query::GroupingKind, query::OrderKind};
@@ -21,6 +27,9 @@
 //!     println!("TOTAL: {}s", res.total_grand.num_seconds());
 //! }
 //! ```
+//!
+//! For more details about query parameters and response formst,
+//! see [Toggl Reports API v2](https://github.com/toggl/toggl_api_docs/blob/master/reports.md).
 
 #[macro_use]
 extern crate enum_display_derive;
