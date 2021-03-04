@@ -47,7 +47,7 @@ pub use detailed_report::DetailedReport;
 pub use summary_report::SummaryReport;
 pub use weekly_report::WeeklyReport;
 
-const DEFAULT_UA: &'static str = "komori-n<ikamat.kmr@gmail.com>";
+const DEFAULT_UA: &str = "komori-n<ikamat.kmr@gmail.com>";
 
 /// A structure to wrap Toggl Reports API v2.
 #[derive(Debug)]

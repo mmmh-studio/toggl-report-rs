@@ -15,7 +15,7 @@ fn deserialize_duration<'de, D>(deserializer: D) -> Result<Duration, D::Error>
     let opt: Option<i64> = Option::deserialize(deserializer)?;
     Ok(opt
         .map(chrono::Duration::milliseconds)
-        .unwrap_or(Duration::seconds(0))
+        .unwrap_or_else(|| Duration::seconds(0))
     )
 }
 
@@ -160,7 +160,7 @@ pub enum Title {
 }
 
 /// A string to represent null entries
-const NONE_STR: &'static str= "(none)";
+const NONE_STR: &str= "(none)";
 
 impl Title {
     /// Convert to String
@@ -187,7 +187,7 @@ pub struct ProjectTitle {
 impl ProjectTitle {
     fn name(&self) -> String {
         self.project.clone()
-            .unwrap_or(NONE_STR.to_owned())
+            .unwrap_or_else(|| NONE_STR.to_owned())
     }
 }
 
@@ -201,7 +201,7 @@ pub struct ClientTitle {
 impl ClientTitle {
     pub fn name(&self) -> String {
         self.client.clone()
-            .unwrap_or(NONE_STR.to_owned())
+            .unwrap_or_else(|| NONE_STR.to_owned())
     }
 }
 
@@ -215,7 +215,7 @@ pub struct UserTitle {
 impl UserTitle {
     pub fn name(&self) -> String {
         self.user.clone()
-            .unwrap_or(NONE_STR.to_owned())
+            .unwrap_or_else(|| NONE_STR.to_owned())
     }
 }
 
@@ -229,7 +229,7 @@ pub struct TaskTitle {
 impl TaskTitle {
     pub fn name(&self) -> String {
         self.task.clone()
-            .unwrap_or(NONE_STR.to_owned())
+            .unwrap_or_else(|| NONE_STR.to_owned())
     }
 }
 
@@ -243,7 +243,7 @@ pub struct TimeEntryTitle {
 impl TimeEntryTitle {
     pub fn name(&self) -> String {
         self.time_entry.clone()
-            .unwrap_or(NONE_STR.to_owned())
+            .unwrap_or_else(|| NONE_STR.to_owned())
     }
 }
 
