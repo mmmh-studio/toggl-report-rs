@@ -41,9 +41,9 @@ pub mod summary_report;
 pub mod weekly_report;
 
 use anyhow::Result;
+pub use detailed_report::DetailedReport;
 use query::Query;
 use reqwest::Client;
-pub use detailed_report::DetailedReport;
 pub use summary_report::SummaryReport;
 pub use weekly_report::WeeklyReport;
 
@@ -81,9 +81,7 @@ impl Toggl {
             .query(&query_vec)
             .basic_auth(&self.api_token, Some("api_token"));
 
-        let res = req
-            .send().await?
-            .text().await?;
+        let res = req.send().await?.text().await?;
 
         Ok(res)
     }
@@ -110,6 +108,7 @@ impl Toggl {
         const ENDPOINT: &str = "https://api.track.toggl.com/reports/api/v2/summary";
 
         let res = self.rest_get(ENDPOINT, query).await?;
+        dbg!(&res);
         let report: SummaryReport = serde_json::from_str(&res)?;
 
         Ok(report)
